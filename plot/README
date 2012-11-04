@@ -1,0 +1,18 @@
+star plot
+
+Based on assignment from Karen Reid at University of Toronto in 2009.
+
+    Source: http://nifty.stanford.edu/2009/reid-starmap/starmap.html
+
+A copy of the assignment is provided as starmap.html
+
+The star data is stored in stars.txt and is specified as follows:
+
+    The first three fields are the x, y and z coordinates for the star.
+        We will ignore the z coordinate, and use only the x and y coordinates.
+        Each axis in the coordinate system goes from -1 to +1, and the centre point is 0,0. (See the figure below.)
+    The fourth field is the Henry Draper number, which is simply a unique identifier for the star.
+    The fifth field is the magnitude (or brightness) of the star.
+    The sixth field is Harvard Revised number, another identifier.
+    The seventh field exists only for a small number of stars and is a semicolon-separated list of names for a star. A star may have several names.
+
