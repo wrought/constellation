@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <title>
+      About Star Charts and Constellations
+    </title>
+  </head>
+  
+  <body>
+      <h1>Star Charts and Constellations</h1>
+
+<p><b><a href="http://www.cs.toronto.edu/~reid">Karen Reid</a> - 
+	University of Toronto</b></p>
+
+<p>Who can walk outside on a clear night in the countryside, and not look up
+at the stars. Identifying constellations is one of the first lessons in
+astronomy and ties together science and mythology. There are numerous
+applications that present star maps to help stargazers identify the stars and
+constellations they look at. In this assignment, students use data from
+published star catalogs to create a star map picture, and draw constellations
+on the star map. The shapes of the constellations come from the well-know book
+by H. A. Rey, <a
+href="http://www.amazon.com/Stars-New-Way-See-Them/dp/0395248302"
+title="Amazon.com: The Stars: A New Way to See Them: H. A. Rey: Books"><i>The
+Stars: A New Way to See Them</a></i>. This was one of my favorite books as a
+kid, and although I never followed up on my original dream to become an
+astronomer, I spent many hours learning to find constellations in the northern
+sky.</p>
+
+<p>In addition to using an attractive domain, this assignment is nifty because
+students manipulate real data. Students find assignments that use real data
+compelling, because such assignments allow students to see that they are
+taking steps toward writing "real" programs. The graphical nature of this
+assignment is also appealing, and yet the underlying data structures and
+algorithms involved in creating a star map are simple enough for CS1 students
+to grasp.</p>
+
+	<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
+	 cellspacing="2">
+	  <tbody>
+	    <tr>
+	      <td style="vertical-align: top;">Summary</td>
+
+	      <td style="vertical-align: top;">Reading several files with regular
+          structure, building map/dictionary data structure, and using a
+          graphics package to plot a picture<br> </td>
+
+	    </tr>
+	    <tr>
+	      <td style="vertical-align: top;">Topics<br>
+	      </td>
+
+	      <td style="vertical-align: top;">Reading from files, working with
+          real data, map or dictionary data structures, understanding
+          coordinate systems, basic graphic functions to plot lines and
+          shapes.<br> </td>
+
+	    </tr>
+	    <tr>
+	      <td style="vertical-align: top;">Audience<br>
+	      </td>
+
+	      <td style="vertical-align: top;">Appropriate for CS1 or a later
+          course.<br> </td>
+
+	    </tr>
+	    <tr>
+	      <td style="vertical-align: top;">Difficulty<br>
+	      </td>
+
+	      <td style="vertical-align: top;">This is an intermediate assignment,
+          taking 1 or 2 weeks for a CS1 student, assuming they have already
+          seen some of the graphics.<br> </td>
+
+	    </tr>
+	    <tr>
+	      <td style="vertical-align: top;">Strengths<br>
+	      </td>
+
+	      <td style="vertical-align: top;">The assignment uses real data
+          collected from databases built for and used by astronomers. It is
+          fun because it has great visual appeal.<br> </td>
+
+	    </tr>
+	    <tr>
+	      <td style="vertical-align: top;">Weaknesses<br>
+	      </td>
+
+	      <td style="vertical-align: top;">This was not originally designed 
+		  as an OO assignment. The Java version requires a lot more scaffolding
+		  than the Python version.<br> </td>
+
+	    </tr>
+	    <tr>
+	      <td style="vertical-align: top;">Dependencies<br>
+	      </td>
+
+	      <td style="vertical-align: top;">Requires a graphics package that
+          allows students to create a picture and draw boxes and lines.
+          Requires that students can read from files.<br> </td>
+
+	    </tr>
+	    <tr>
+	      <td style="vertical-align: top;">Variants<br>
+	      </td>
+
+	      <td style="vertical-align: top;">I cleaned up the original data
+          quite substantially to remove missing and duplicate data. Students
+          could be pointed at the original data sources. Students could be
+          asked to develop a user interface to highlight different stars, to
+          plot constellations on demand, or to plot stars of greater than a
+          given magnitude.<br> </td>
+
+	    </tr> 
+	</tbody> 
+	</table>
+	
+<h2><a href="./starmap.html">Assignment Handout</a></h2>
+
+<p>Our CS1 course is taught using Python and uses a <a
+href="http://code.google.com/p/pygraphics/" title="pygraphics - Google
+Code">locally modified picture library</a> derived from Mark Guzdial's <a
+href="http://amazon.com/dp/0131176552" title="Amazon.com: Introduction to
+Computing and Programming in Python, A Multimedia Approach: Mark Guzdial:
+Books">Introduction to computing and programming with Python: A Multimedia
+Approach</a>. The <a href="./starmap.html">assignment handout</a> describes the
+assignment that our CS1 students were asked to complete. There are lots of
+possible variations. </p>
+
+<p>The assignment was designed for a Python course, so the assignment handout
+	is specific to Python, but a Java solution is available to instructors on
+	request.</p>
+
+<h2>Data collection</h2>
+
+<p>The biggest challenge in designing this assignment was finding appropriate
+data sources. Following is a brief description of the data sources and the
+steps involved to produce the data given to the students.</p>
+
+<p>The star data comes from the <a href="http://vizier.cfa.harvard.edu/"
+title="VizieR Service">VizieR Catalog Service</a>. I used data from two
+catalogs: IV/22 K5 - SAO - HD - Common Name Cross Index (Smith 1996), and
+IV/27 HD-DM-GC-HR-HIP-Bayer-Flamsteed Cross Index (Kostjuk, 2002). The first
+contained names, while the second contained the Harvard Revised number which
+was used to identify stars that belonged to the various constellations. </p>
+
+<p>To convert the star positions defined by Right Ascension and Declination
+into x, y, and z coordinates, I used a command-line tool from the <a
+href="http://tdc-www.harvard.edu/software/wcstools.html" title="WCSTools:
+Image World Coordinate System Utilities">WCSTools</a> package called <a
+href="http://tdc-www.harvard.edu/software/wcstools/skycoor.html"
+title="WCSTools skycoor Sky Coordinate Conversion Utility">skycoor</a>.</p>
+
+<p>The constellation data was also drawn from two sources. The stellar data
+comes from a <a href="http://seds.org/Maps/Const/constS.html">collection</a>
+of webpages that describe 88 constellations. The stellar data was used to
+associate star names with the Harvard Revised number in the original data set.
+The data that defines the lines that make up a constellation picture were
+taken from a <a
+href="http://www.astro.wisc.edu/~dolan/constellations/constellationjavalist.html"
+title="Interactive Sky Chart List">java applet</a> by <a
+href="http://www.astro.wisc.edu/~dolan/" title="Chris Dolan's Home Page">Chris
+Dolan</a>. One of the data files provided with the applet (starname_rey.dat)
+contains the data to draw the constellations as drawn by H.A.Rey, author of <a
+href="http://www.amazon.com/Stars-New-Way-See-Them/dp/0395248302"
+title="Amazon.com: The Stars: A New Way to See Them: H. A. Rey: Books">The
+Stars: A New Way to See Them</a>. </p>
+
+</body>
+</html>
